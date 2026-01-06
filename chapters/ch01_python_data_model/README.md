@@ -10,8 +10,8 @@
 
 ## 🎯 주요 내용
 
-### 1. \_\_getitem\_\_()과 \_\_len\_\_() 예시
-- 카드 덱을 클래스를 이용해 구현하여 \_\_getitem\_\_()과 \_\_len\_\_() 예시를 보여준다.
+### 1. `__getitem__`()과 `__len__`() 예시
+- 카드 덱을 클래스를 이용해 구현하여 `__getitem__`()과 `__len__`() 예시를 보여준다.
 
 ## 💡 코드 예제
 ```python
@@ -47,6 +47,55 @@ Card(rank='7', suit='diamonds')
 52
 Card(rank='2', suit='spades')
 ```
+
+### 2. Vec
+- 카드 덱을 클래스를 이용해 구현하여 `__repr__`(), `__abs__`(), `__add__`(), `__mul__`() 예시를 보여준다.
+
+## 💡 코드 예제
+```python
+import math
+
+class Vector:
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
+
+    def __repr__(self):
+        return f'Vector({self.x!r}, {self.y!r})'
+
+    def __abs__(self):
+        return math.hypot(self.x, self.y)
+
+    def __bool__(self):
+        return bool(abs(self))
+
+    def __add__(self, other):
+        x = self.x + other.x
+        y = self.y + other.y
+        return Vector(x, y)
+
+    def __mul__(self, scalar):
+        return Vector(self.x * scalar, self.y * scalar)
+
+
+v1 = Vector(2, 4)
+v2 = Vector(2, 1)
+print(v1 + v2)
+
+v = Vector(3, 4)
+print(abs(v))
+
+print(v * 3)
+print(abs(v * 3))
+```
+
+```
+Vector(4, 5)
+5.0
+Vector(9, 12)
+15.0
+```
+
 
 ## 🔍 Deep Dive
 
