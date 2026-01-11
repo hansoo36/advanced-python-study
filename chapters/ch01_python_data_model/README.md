@@ -48,8 +48,8 @@ Card(rank='7', suit='diamonds')
 Card(rank='2', suit='spades')
 ```
 
-### 2. Vec
-- 카드 덱을 클래스를 이용해 구현하여 `__repr__`(), `__abs__`(), `__add__`(), `__mul__`() 예시를 보여준다.
+### 2. Vector
+- Vector의 덧셈 연산자와 곱셈 연산자를 `__repr__`(), `__abs__`(), `__add__`(), `__mul__`() 로 구현한 예시를 보여준다.
 
 ## 💡 코드 예제
 ```python
@@ -95,6 +95,20 @@ Vector(4, 5)
 Vector(9, 12)
 15.0
 ```
+
+### 3. 사용자 정의형의 Boolean값
+
+| Operation | Result | Notes |  
+| --- | --- | --- |  
+| `x or y` | If x is true, then x, else y | It only evaluates the second argument if the first one is false <sup>1) |  
+| `x and y` | If x is false, then x, else y | It only evaluates the second argument if the first one is true <sup>1) |  
+| `not x` | If x is false, then `True`, else `False` | `not` has a lower priority than non-Boolean operators <sup>2) |  
+
+1) Short-circuit evaluation: Second operands is only evaluated if the first operand is insufficientto determine the outcome of the entire expression
+(Ex) `False and ...` results in False. The part after `and` is never checked
+2) `not a == b` is interpreted as `not (a == b)`, and `a == not b` is a syntax error  
+
+- `len()`을 메서드로 만들지 않는 이유는, `abs()`와 마찬가지로 파이썬 데이터 모델의 특별 대우를 받기 때문 → 효율적인 실행을 위해
 
 
 ## 🔍 Deep Dive
