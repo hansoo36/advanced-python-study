@@ -67,6 +67,27 @@ for item in data:
 filtered_data = [result for item in data if (result := process(item) > 0]
 ```
 
+```python
+	x = 'ABC'
+	codes = [ord(x) for x in x]
+	print(x)
+	print(codes)
+
+	codes = [last := ord(c) for c in x]
+	print(last)
+	print(c)
+```
+
+```
+'ABC'
+[65, 66, 67]
+
+67
+Traceback (most recent call last):
+	File "<stdin>", line 1, in <module>
+NameError: name 'c' is not defined
+```
+
 ## 🚀 실전 활용
 
 <!-- 실무에서 어떻게 적용할 수 있을지 -->
